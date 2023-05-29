@@ -1,0 +1,23 @@
+.container{
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nav{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.text{
+    width: 65px;
+height: 19px;
+font-family: 'Satoshi';
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 35px;  
+}
+
+
