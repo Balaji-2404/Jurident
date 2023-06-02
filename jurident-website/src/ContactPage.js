@@ -9,12 +9,29 @@ import { useState } from "react";
 import Badge from "react-bootstrap/Badge";
 import empty from "../src/empty.jpg";
 function ContactPage() {
-  const [inputText, setInputText] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [feedback, setFeedback] = useState("");
   const [characterLimit] = useState(32);
   // event handler
   const handleChange = (event) => {
-    setInputText(event.target.value);
+    setFirstName(event.target.value);
   };
+  const handleChange1 = (event) => {
+    setLastName(event.target.value);
+  };
+  const handleChange2 = (event) => {
+    setPhone(event.target.value);
+  };
+  const handleChange3 = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleChange4 = (event) => {
+    setFeedback(event.target.value);
+  };
+
   return (
     <div className="container" style={{ width: "80%" }}>
       <div style={{ width: "50%" }}>
@@ -45,19 +62,19 @@ function ContactPage() {
               className="text"
               as="textarea"
               rows={1}
-              value={inputText}
+              value={firstName}
               onChange={handleChange}
-              isInvalid={inputText.length > characterLimit}
+              isInvalid={firstName.length > characterLimit}
             />
             <div>
               <div className="countp">
                 <Badge
                   className="mt-3 count"
                   bg={`${
-                    inputText.length > characterLimit ? "danger" : "light"
+                    firstName.length > characterLimit ? "danger" : "primary"
                   }`}
                 >
-                  {inputText.length}/{characterLimit}
+                  {firstName.length}/{characterLimit}
                 </Badge>
               </div>
             </div>
@@ -69,19 +86,19 @@ function ContactPage() {
               className="text"
               as="textarea"
               rows={1}
-              value={inputText}
-              onChange={handleChange}
-              isInvalid={inputText.length > characterLimit}
+              value={lastName}
+              onChange={handleChange1}
+              isInvalid={lastName.length > characterLimit}
             />
             <div>
               <div className="countp">
                 <Badge
                   className="mt-3 count"
                   bg={`${
-                    inputText.length > characterLimit ? "danger" : "light"
+                    lastName.length > characterLimit ? "danger" : "primary"
                   }`}
                 >
-                  {inputText.length}/{characterLimit}
+                  {lastName.length}/{characterLimit}
                 </Badge>
               </div>
             </div>
@@ -93,19 +110,17 @@ function ContactPage() {
               className="text"
               as="textarea"
               rows={1}
-              value={inputText}
-              onChange={handleChange}
-              isInvalid={inputText.length > characterLimit}
+              value={phone}
+              onChange={handleChange2}
+              isInvalid={phone.length > characterLimit}
             />
             <div>
               <div className="countp">
                 <Badge
                   className="mt-3 count"
-                  bg={`${
-                    inputText.length > characterLimit ? "danger" : "light"
-                  }`}
+                  bg={`${phone.length > characterLimit ? "danger" : "primary"}`}
                 >
-                  {inputText.length}/{characterLimit}
+                  {phone.length}/{characterLimit}
                 </Badge>
               </div>
             </div>
@@ -117,19 +132,17 @@ function ContactPage() {
               className="text"
               as="textarea"
               rows={1}
-              value={inputText}
-              onChange={handleChange}
-              isInvalid={inputText.length > characterLimit}
+              value={email}
+              onChange={handleChange3}
+              isInvalid={email.length > characterLimit}
             />
             <div>
               <div className="countp">
                 <Badge
                   className="mt-3 count"
-                  bg={`${
-                    inputText.length > characterLimit ? "danger" : "light"
-                  }`}
+                  bg={`${email.length > characterLimit ? "danger" : "primary"}`}
                 >
-                  {inputText.length}/{characterLimit}
+                  {email.length}/{characterLimit}
                 </Badge>
               </div>
             </div>
@@ -141,19 +154,19 @@ function ContactPage() {
               className="text"
               as="textarea"
               rows={3}
-              value={inputText}
-              onChange={handleChange}
-              isInvalid={inputText.length > characterLimit}
+              value={feedback}
+              onChange={handleChange4}
+              isInvalid={feedback.length > characterLimit}
             />
             <div>
               <div className="countp">
                 <Badge
                   className="mt-3 count"
                   bg={`${
-                    inputText.length > characterLimit ? "danger" : "light"
+                    feedback.length > characterLimit ? "danger" : "primary"
                   }`}
                 >
-                  {inputText.length}/{characterLimit}
+                  {feedback.length}/{characterLimit}
                 </Badge>
               </div>
             </div>
