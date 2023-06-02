@@ -1,12 +1,12 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./ContactPage.css";
-import { MDBBtn } from "mdb-react-ui-kit";
-import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
-import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
-import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import { useState } from "react";
 import Badge from "react-bootstrap/Badge";
+import { MdOutlineMessage } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
+import { FiMail } from "react-icons/fi";
+
 import empty from "../src/empty.jpg";
 function ContactPage() {
   const [firstName, setFirstName] = useState("");
@@ -43,24 +43,32 @@ function ContactPage() {
           email, or social media.{" "}
         </div>
         <div className="button mt-5 mb-3">
-          <MDBBtn style={{ width: "45%" }} className="mx-3" color="dark">
-            <CommentOutlinedIcon className="mx-1"> </CommentOutlinedIcon>
+          <Button style={{ width: "45%" }} className="mx-2" variant="dark">
+            <MdOutlineMessage className="mx-1"> </MdOutlineMessage>
             VIA SUPPORT CHAT
-          </MDBBtn>
-          <MDBBtn style={{ width: "45%" }} className="mx-2" color="dark">
-            <CallOutlinedIcon className="mx-1"></CallOutlinedIcon>VIA CALL
-          </MDBBtn>
+          </Button>
+
+          <Button style={{ width: "45%" }} className="mx-2" variant="dark">
+            <FiPhone className="mx-1"></FiPhone>VIA CALL
+          </Button>
         </div>
-        <MDBBtn outline style={{ width: "100%" }} className="mx-2" color="dark">
-          <MailOutlineOutlinedIcon className="mx-1"></MailOutlineOutlinedIcon>
+
+        <Button
+          style={{ width: "100%" }}
+          className="mx-2"
+          variant="outline-dark"
+        >
+          <FiMail className="mx-1"></FiMail>
           VIA EMAIL FORM
-        </MDBBtn>
+        </Button>
+
         <Form className="form">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="label">FIRST NAME</Form.Label>
             <Form.Control
               className="text"
               as="textarea"
+              placeholder="lorem ipsum"
               rows={1}
               value={firstName}
               onChange={handleChange}
@@ -85,6 +93,7 @@ function ContactPage() {
             <Form.Control
               className="text"
               as="textarea"
+              placeholder="lorem ipsum"
               rows={1}
               value={lastName}
               onChange={handleChange1}
@@ -109,6 +118,7 @@ function ContactPage() {
             <Form.Control
               className="text"
               as="textarea"
+              placeholder="lorem ipsum"
               rows={1}
               value={phone}
               onChange={handleChange2}
@@ -131,6 +141,7 @@ function ContactPage() {
             <Form.Control
               className="text"
               as="textarea"
+              placeholder="lorem ipsum"
               rows={1}
               value={email}
               onChange={handleChange3}
@@ -153,6 +164,7 @@ function ContactPage() {
             <Form.Control
               className="text"
               as="textarea"
+              placeholder="lorem ipsum"
               rows={3}
               value={feedback}
               onChange={handleChange4}
@@ -172,9 +184,9 @@ function ContactPage() {
             </div>
           </Form.Group>
 
-          <MDBBtn className="btn mx-2 mb-4" color="dark">
+          <Button className="mx-2 mb-4" variant="dark">
             SUBMIT
-          </MDBBtn>
+          </Button>
         </Form>
       </div>
       <div className="img">
